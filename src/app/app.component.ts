@@ -15,16 +15,11 @@ import { CoreService } from './core/core.service';
 export class AppComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
-    'firstName',
-    'lastName',
-    'email',
-    'dob',
-    'gender',
-    'education',
-    'company',
-    'experience',
-    'package',
-    'action',
+    'name',
+    'address',
+    'phone',
+    'createdAt',
+    'updatedAt'
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -55,6 +50,7 @@ export class AppComponent implements OnInit {
   getEmployeeList() {
     this._empService.getEmployeeList().subscribe({
       next: (res) => {
+        console.log(res)
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

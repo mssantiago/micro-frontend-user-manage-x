@@ -28,15 +28,9 @@ export class EmpAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
-      firstName: '',
-      lastName: '',
-      email: '',
-      dob: '',
-      gender: '',
-      education: '',
-      company: '',
-      experience: '',
-      package: '',
+      name: '',
+      address: '',
+      phone: ''
     });
   }
 
